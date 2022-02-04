@@ -1,14 +1,16 @@
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
+import { createBrowserHistory } from 'history';
 
 import Navigation from "./Navigation";
 import React from "react";
 import localRoutes from "./routes";
 import remoteRoutes from "app2/routes";
+import history from './history';
 
 const routes = [...localRoutes, ...remoteRoutes];
 
 const App = () => (
-  <HashRouter>
+  <Router history={history}>
     <div>
       <h1>App 1</h1>
       <Navigation />
@@ -25,7 +27,7 @@ const App = () => (
         </Switch>
       </React.Suspense>
     </div>
-  </HashRouter>
+  </Router>
 );
 
 export default App;

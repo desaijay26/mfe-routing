@@ -9,6 +9,9 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     port: 3001,
+    historyApiFallback: {
+      index: '/index.html'
+    }
   },
   output: {
     publicPath: "auto",
