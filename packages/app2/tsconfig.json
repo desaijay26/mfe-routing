@@ -20,5 +20,5 @@
       "strictNullChecks": false,
       "suppressImplicitAnyIndexErrors": true
     },
-    "include": ["./src/*"]
+    "include": ["./src/*", "src/types/index.d.ts"]
   }

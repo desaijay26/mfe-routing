@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_shared_routes2_app1=self.webpackChunk_shared_routes2_app1||[]).push([[314],{314:(e,t,a)=>{a.r(t),a.d(t,{default:()=>s});var n=a(305);const s=[{path:"/",component:a.n(n)().lazy((function(){return a.e(616).then(a.bind(a,976))})),exact:!0}]}}]);

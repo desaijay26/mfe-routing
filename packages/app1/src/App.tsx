@@ -3,6 +3,7 @@ import { Router, Route, Switch } from "react-router-dom";
 import Navigation from "./Navigation";
 import React from "react";
 import localRoutes from "./routes";
+// @ts-ignore
 import remoteRoutes from "app2/routes";
 import history from './history';
 

@@ -1,9 +1,12 @@
 import { Router, Route, Switch } from "react-router-dom";
-
+// @ts-ignore  
 import Navigation from "app1/Navigation";
 import React from "react";
 import localRoutes from "./routes";
+
+// @ts-ignore  
 import remoteRoutes from "app1/routes";
+// @ts-ignore
 import history from "app1/history";
 
 const routes = [...localRoutes, ...remoteRoutes];
