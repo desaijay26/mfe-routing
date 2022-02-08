@@ -2,20 +2,21 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin =
   require("webpack").container.ModuleFederationPlugin;
 const path = require("path");
-const deps = require("./package.json").dependencies;
-
+const deps = require("../package.json").dependencies;
 module.exports = {
   entry: "./src/index",
-  mode: "development",
+  mode: "production",
   devServer: {
     contentBase: path.join(__dirname, "dist"),
-    port: 3002,
+    port: 3001,
     historyApiFallback: {
       index: '/index.html'
     }
   },
   output: {
-    publicPath: "auto",
+    publicPath: "/",
+    path: path.join(__dirname, "dist"),
+    filename: "[name].[contenthash].js",
   },
   resolve: {
     extensions: [".ts", ".js", ".tsx"],
@@ -33,12 +34,13 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "app2",
+      name: "app1",
       filename: "remoteEntry.js",
       remotes: {
-        app1: "app1@http://localhost:3001/remoteEntry.js",
+        app2: "app2@http://localhost:3002/remoteEntry.js",
       },
       exposes: {
+        "./Navigation": "./src/Navigation",
         "./routes": "./src/routes",
       },
       shared: {
