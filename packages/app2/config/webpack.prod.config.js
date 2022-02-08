@@ -5,18 +5,13 @@ const path = require("path");
 const deps = require("../package.json").dependencies;
 
 module.exports = {
-  entry: "./src/index",
-  mode: "development",
-  devServer: {
-    contentBase: path.join(__dirname, "dist"),
-    port: 3002,
-    historyApiFallback: {
-      index: '/index.html'
-    }
-  },
+  mode: "production",
+  performance : {
+    hints : false
+},
   output: {
-    publicPath: "/",
-    path: path.join(__dirname, "dist"),
+    publicPath: "auto",
+    path: path.join(__dirname, "../dist"),
     filename: "[name].[contenthash].js",
   },
   resolve: {

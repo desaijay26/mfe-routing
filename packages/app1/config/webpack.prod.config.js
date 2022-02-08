@@ -4,18 +4,13 @@ const ModuleFederationPlugin =
 const path = require("path");
 const deps = require("../package.json").dependencies;
 module.exports = {
-  entry: "./src/index",
   mode: "production",
-  devServer: {
-    contentBase: path.join(__dirname, "dist"),
-    port: 3001,
-    historyApiFallback: {
-      index: '/index.html'
-    }
-  },
+  performance : {
+    hints : false
+},
   output: {
-    publicPath: "/",
-    path: path.join(__dirname, "dist"),
+    publicPath: "auto",
+    path: path.join(__dirname, "../dist"),
     filename: "[name].[contenthash].js",
   },
   resolve: {
